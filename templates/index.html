@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} IP Finder {% endblock %}
+{% block body %}
+<div class="container container-fluid">
+    <h1>Flask REST Ip Finder through ipapi</h1><br>
+    <form action="{{url_for('index')}}" method="post">
+        <div class="form-group">
+            <input type="text" name="ip" class="form-control" placeholder="Enter IP Address">
+            <button type="submit" class="btn btn-primary">Locate IP Address</button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <p>IP Address: {{ data.ip }}</p>
+    <p>Network: {{ data.network }}</p>
+    <p>Version: {{ data.version }}</p>
+    <p>City: {{ data.city }}</p>
+    <p>Region: {{ data.region }}</p>
+    <p>Region Code: {{ data.region_code }}</p>
+    <p>Country: {{ data.country_name }}</p>
+    <p>Postal: {{ data.postal }}</p>
+    <p>Longitude: {{ data.longitude }}</p>
+    <p>Timezone: {{ data.timezone }} {{ data.utc_offset }}</p>
+    <p>ISP Provider: {{ data.org }}</p>
+</div>
+
+{% endblock %}
