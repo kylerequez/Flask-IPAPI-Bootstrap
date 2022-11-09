@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block title %} IP Finder {% endblock %} {% block body %}
 
 <div class="container-fluid">
-    <div class="container" style="background-image: url('images/bg.png');">
+    <div class="container" style="background-image: '/static/bg.png';">
         <h1 class="text-info" style="text-align:center;">Flask REST Ip Finder through ipapi</h1><br>
     </div>
     <form action="{{url_for('index')}}" method="post">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Enter IP ADDRESS" aria-describedby="basic-addon2">
+            <input type="text" name="ip" class="form-control" placeholder="Enter IP ADDRESS" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button class="btn btn-outline-info" type="button"> Locate IP ADDRESS</button>
+                <button class="btn btn-outline-info" type="submit"> Locate IP ADDRESS</button>
             </div>
         </div>
     </form>
@@ -18,21 +18,21 @@
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
                 <div class="card h-100">
-                    <img src="images/" class="card-img-top" alt="...">
+                    <img src="/static/1.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"> IP ADDRESS </h5>
-                        <p>{{ data.ip }}</p>
+                        <p class="card-text">{{ data.ip }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/2.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">NETWORK</h5>
-                        <p class="card-text">
-                            <p>{{ data.network }}</p>
+                        <p class="card-text" class="card-text">
+                            <p class="card-text">{{ data.network }}</p>
                         </p>
                     </div>
                 </div>
@@ -40,93 +40,105 @@
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/3.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">VERSION</h5>
-                        <p>{{ data.version }}</p>
+                        <p class="card-text">{{ data.version }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/4.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">CITY</h5>
-                        <p>{{ data.city }}</p>
+                        <p class="card-text">{{ data.city }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/5.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">REGION</h5>
-                        <p> {{ data.region }} </p>
+                        <p class="card-text"> {{ data.region }} </p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/6.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">REGION CODE</h5>
-                        <p>{{ data.region_code }}</p>
+                        <p class="card-text">{{ data.region_code }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/7.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">COUNTRY NAME</h5>
-                        <p>{{ data.country_name }}</p>
+                        <p class="card-text">{{ data.country_name }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/8.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">POSTAL</h5>
-                        <p>{{ data.postal }}</p>
+                        <p class="card-text">{{ data.postal }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/9.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">LONGITUDE</h5>
-                        <p>{{ data.longitude }}</p>
+                        <p class="card-text">{{ data.longitude }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
+                    <img src="/static/10.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">TIMEZONE</h5>
-                        <p>{{ data.timezone }} {{ data.utc_offset }}</p>
+                        <p class="card-text">{{ data.timezone }} {{ data.utc_offset }}</p>
                     </div>
                 </div>
             </div>
 
             <div class="col">
                 <div class="card h-100">
-                    <img src="..." class="card-img-top" alt="...">
-                    <div class="card-body">
+                    <img src="/static/11.png" class="card-img-top" alt="...">
+                    <h5 class="card-body">
                         <h5 class="card-title">ISP Provider</h5>
-                        <p>{{ data.org }}</p>
-                    </div>
+                        <p class="card-text">{{ data.org }}</p>
+                    </h5>
                 </div>
             </div>
+        </div>
+
+        <div>
+            {% if addresses|length > 0 %}
+            <div class="alert alert-info mt-2">Your previous searches:</div>
+            <ul>
+                {% for address in addresses %}
+                <li>
+                    <a href="{{ address[1] }}">{{ address[0] }}</a>
+                </li>{% endfor %}
+            </ul>
+            {% endif %}
         </div>
     </div>
 </div>
