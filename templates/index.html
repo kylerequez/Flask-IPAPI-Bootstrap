@@ -1,28 +1,135 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %} IP Finder {% endblock %} {% block body %}
 
-{% block title %} IP Finder {% endblock %}
-{% block body %}
-<div class="container container-fluid">
-    <h1>Flask REST Ip Finder through ipapi</h1><br>
+<div class="container-fluid">
+    <div class="container" style="background-image: url('images/bg.png');">
+        <h1 class="text-info" style="text-align:center;">Flask REST Ip Finder through ipapi</h1><br>
+    </div>
     <form action="{{url_for('index')}}" method="post">
-        <div class="form-group">
-            <input type="text" name="ip" class="form-control" placeholder="Enter IP Address">
-            <button type="submit" class="btn btn-primary">Locate IP Address</button>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Enter IP ADDRESS" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-info" type="button"> Locate IP ADDRESS</button>
+            </div>
         </div>
     </form>
-    <br>
-    <br>
-    <p>IP Address: {{ data.ip }}</p>
-    <p>Network: {{ data.network }}</p>
-    <p>Version: {{ data.version }}</p>
-    <p>City: {{ data.city }}</p>
-    <p>Region: {{ data.region }}</p>
-    <p>Region Code: {{ data.region_code }}</p>
-    <p>Country: {{ data.country_name }}</p>
-    <p>Postal: {{ data.postal }}</p>
-    <p>Longitude: {{ data.longitude }}</p>
-    <p>Timezone: {{ data.timezone }} {{ data.utc_offset }}</p>
-    <p>ISP Provider: {{ data.org }}</p>
-</div>
 
-{% endblock %}
+    {% if data %}
+    <div class="container mt-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card h-100">
+                    <img src="images/" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> IP ADDRESS </h5>
+                        <p>{{ data.ip }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">NETWORK</h5>
+                        <p class="card-text">
+                            <p>{{ data.network }}</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">VERSION</h5>
+                        <p>{{ data.version }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">CITY</h5>
+                        <p>{{ data.city }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">REGION</h5>
+                        <p> {{ data.region }} </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">REGION CODE</h5>
+                        <p>{{ data.region_code }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">COUNTRY NAME</h5>
+                        <p>{{ data.country_name }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">POSTAL</h5>
+                        <p>{{ data.postal }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">LONGITUDE</h5>
+                        <p>{{ data.longitude }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">TIMEZONE</h5>
+                        <p>{{ data.timezone }} {{ data.utc_offset }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">ISP Provider</h5>
+                        <p>{{ data.org }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="alert alert-info">Welcome to FLASK IPAPI</div>
+{% endif %} {% endblock %}
